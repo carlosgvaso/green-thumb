@@ -18,12 +18,13 @@ INCS = -I.\
 
 LIBS=../c_environment/libarduino.a
 TARGET=../bin/green-thumb
+CFLAGS += -DARDUINO=100
 
 OBJS = green-thumb
 
 all: 
 	@mkdir -p $(TARGET)
-	@for i in $(OBJS); do echo "$(CXX) $(INCS) $$i.c -o $(TARGET)/$$i $(LIBS)" && $(CXX) $(INCS) $$i.c -o $(TARGET)/$$i $(LIBS); done
+	@for i in $(OBJS); do echo "$(CXX) $(CFLAGS) $(INCS) $$i.c -o $(TARGET)/$$i $(LIBS)" && $(CXX) $(CFLAGS) $(INCS) $$i.c -o $(TARGET)/$$i $(LIBS); done
 
 clean:
 	@for i in $(OBJS); do rm -f $(TARGET)/$$i; done

@@ -11,7 +11,7 @@
 #include "core.h"
 #include "SHT1x.h"
 
-#include "unitstd.h"
+#include <unistd.h>
 
 // Specify data and clock connections and instantiate SHT1x object
 int data_pin = 10;
